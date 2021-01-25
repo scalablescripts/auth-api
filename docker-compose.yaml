@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  backend:
+    image: scalablescripts/auth-backend
+    environment:
+      DB_HOST: db
+      DB_DATABASE: auth
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: auth
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .dbdata:/var/lib/mysql
