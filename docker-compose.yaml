@@ -1,6 +1,7 @@
 version: '3.9'
 services:
   backend:
+    container_name: backend
     image: scalablescripts/auth-backend
     environment:
       DB_HOST: db
