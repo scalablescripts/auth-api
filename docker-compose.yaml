@@ -13,7 +13,7 @@ services:
     depends_on:
       - db
   db:
-    image: mysql
+    image: mysql:5.7.22
     restart: always
     environment:
       MYSQL_DATABASE: auth
